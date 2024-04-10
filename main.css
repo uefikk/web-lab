@@ -16,3 +16,17 @@ footer {
     font-family: Arial;
     margin: 0px;
 }
+a:link {
+    color: brown;
+}
+a:visited {
+    color: rgb(146, 6, 240);
+}
+a:hover {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+a:active {
+    color: aqua;
+    opacity: 0.5;
+}
