@@ -15,6 +15,9 @@ footer {
     color: sienna;
     font-family: Arial;
     margin: 0px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 a {
     color: rgb(2, 2, 155);
