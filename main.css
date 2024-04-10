@@ -36,3 +36,16 @@ a:active {
     color: aqua;
     opacity: 0.5;
 }
+div.menu {
+    border: 6px solid rgb(110, 0, 0);
+    border-radius: 5px;
+    width: 250px;
+    margin: 0 auto;
+}
+div.menu:hover {
+    background-color: moccasin;
+    box-shadow: 0 0 15px rgb(42, 0, 0);
+}
+h1 {
+    text-align: center;
+}
