@@ -15,4 +15,40 @@ footer {
     color: sienna;
     font-family: Arial;
     margin: 0px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+a {
+    color: rgb(2, 2, 155);
+    text-decoration: none;
+    transition: 3s 1s;
+}
+a:link {
+    color: brown;
+}
+a:visited {
+    color: rgb(146, 6, 240);
+}
+a:hover {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+    transition: 0.3s;
+}
+a:active {
+    color: aqua;
+    opacity: 0.5;
+}
+div.menu {
+    border: 6px solid rgb(110, 0, 0);
+    border-radius: 5px;
+    width: 250px;
+    margin: 0 auto;
+}
+div.menu:hover {
+    background-color: moccasin;
+    box-shadow: 0 0 15px rgb(42, 0, 0);
+}
+h1 {
+    text-align: center;
 }
