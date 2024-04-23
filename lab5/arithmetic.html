@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../main.css">
         <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
         <link rel="icon" href="../favicon-32x32.png">
-        <script>
+        <script  type="text/javascript">
             function showSum() {
                 let inputA = document.getElementById('numberA');
                 let inputB = document.getElementById('numberB');
@@ -26,7 +26,7 @@
             let b = parseInt(inputB.value);
             let result = a - b;
             alert('Разность ' + a + ' и ' + b + ' равна ' + result);
-        }
+            }
             function showProizv() {
                 let inputA = document.getElementById('numberA');
                 let inputB = document.getElementById('numberB');
@@ -44,13 +44,19 @@
             let b = parseInt(inputB.value);
             let result = a / b;
             alert('Деление ' + a + ' и ' + b + ' равно ' + result);
-        }
+            }
             function showAutor() {
                 let author =  'Автор страницы: \nЕфимова Юлия Алексеевна';
                 alert(author);
             }
             function Greeting() {
                 alert('Приветствую вас! \nКто никогда не совершал ошибок, тот никогда не пробовал ничего нового.')
+            }
+            function changeOutput( buttonNum, backColor, textColor){
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка ' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
             }
         </script>
         <style>
@@ -70,6 +76,11 @@
             footer{
             cursor: pointer;
             }
+            #output{
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+            }
         </style>
     </head>
 
@@ -81,11 +92,21 @@
         <main>
             <label>Первое число <input type="number" value="5154" id="numberA"></label><br>
             <label>Второе число <input type="number" value="7891" id="numberB"></label><br>
+
             <div class="message" onclick="showSum()">Найти сумму чисел</div>
             <div class="message" onclick="showRazn()">Найти разность чисел</div>
             <div class="message" onclick="showProizv()">Найти произведение чисел</div>
             <div class="message" onclick="showDel()">Найти деление чисел</div>
             <div class="message" onclick="showAutor()">Узнать, кто автор страницы</div>
+
+            <div>
+                <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'Blue', 'black')">
+                <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'brown', 'pink')">
+                <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'green', 'Yellow')">
+                <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'white', 'orange')">
+            </div>
+    
+            <div id="output"></div>
         </main>
 
         <footer ondblclick="Greeting()">
