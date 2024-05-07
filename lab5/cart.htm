@@ -47,14 +47,14 @@
             <div class="cart">
                 <h3>Корзина товаров</h3>
                 <p>Яблоки (100р/шт):</p>
-                <input type="number" id="apple">
+                <input type="number" id="apple" min="0" placeholder="Сколько яблок?">
                 <p>Груши (80р/шт):</p>
-                <input type="number" id="pear">
+                <input type="number" id="pear" min="0" placeholder="Сколько груш?">
                 <p>Апельсины (150р/шт):</p>
-                <input type="number" id="orange">
+                <input type="number" id="orange" min="0" placeholder="Сколько апельсинов">
                 <p>Дыни (300р/шт):</p>
-                <input type="number" id="melon"><br><br>
-                <input type="button" value="Рассчитать" onclick="Summa()">
+                <input type="number" id="melon" min="0" placeholder="Сколько дынь?"> <br> <br> 
+                <input type="button" value="Рассчитать" onclick="Summa()"> 
                 <div id="output"></div>
             </div>
         </main>
