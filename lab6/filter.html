@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal=1.0">
+        <title>Ефимова Юлия Алексеевна. Лабораторная 5"</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <script>
+            function filter() {
+                let color = document.getElementById('wear-color').value;
+                let type = document.getElementById('wear-type').value;
+                let wear = document.getElementById('wear');
+                wear.src = ''
+
+                if(color == 'Красный' && type == 'Футболка') {
+                    wear.src = 'красная футболка.jpg';
+                }
+                else if (color == 'Белый' && type == 'Футболка') {
+                    wear.src = 'белая футболка.jpg'
+                }
+                else if (color == 'Черный' && type == 'Футболка') {
+                    wear.src = 'черная футболка.jpg'
+                }
+                else if (color == 'Красный' && type == 'Поло') {
+                    wear.src = 'красное п.jpg'
+                }
+                else if (color == 'Белый' && type == 'Поло') {
+                    wear.src = 'белое п.jpg'
+                }
+                else if (color == 'Черный' && type == 'Поло') {
+                    wear.src = 'черное п.jpg'
+                }
+                else if (color == 'Красный' && type == 'Майка') {
+                    wear.src = 'красная м.jpg'
+                }
+                else if (color == 'Белый' && type == 'Майка') {
+                    wear.src = 'белая м.jpg'
+                }
+                else if (color == 'Черный' && type == 'Майка') {
+                    wear.src = 'черная м.jpg'
+                }
+
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+        </header>
+
+        <main>
+            <div>
+                Цвет одежды:
+                <select id="wear-color">
+                    <option>Красный</option>
+                    <option>Белый</option>
+                    <option>Черный</option>
+                </select><br>
+
+                Тип одежды:
+                <select id="wear-type">
+                    <option>Футболка</option>
+                    <option>Поло</option>
+                    <option>Майка</option>
+                </select><br>
+
+                <button onclick="filter()">ОК</button><br>
+
+                <img id="wear">
+            </div>
+        </main>
+
+        <footer>
+            &copy; Ефимова Юлия, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
