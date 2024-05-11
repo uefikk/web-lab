@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal=1.0">
+        <title>Ефимова Юлия Алексеевна. Лабораторная 5"</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <style>
+            div {
+                width: 400px;
+                height: 100px;
+                line-height: 20px;
+                font-size: 20px;
+                text-align: center;
+                background-color: rgb(246, 160, 237);
+                border: 5px solid rgb(25, 170, 181);
+                margin: 15px;
+                padding-top: 40px;
+                position: static;
+                cursor: pointer;
+                transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+            }
+        </style>
+
+        <script>
+            function ChangeColor(div) {
+
+            if(div.style.background == 'lightblue') {
+                div.style.background = 'orange'
+                div.style.color = 'black'
+                document.getElementById('color-name').innerHTML = 'оранжевый'
+            }
+
+            else if(div.style.background == 'orange') {
+                div.style.background = 'green'
+                div.style.color = 'black'
+                document.getElementById('color-name').innerHTML = 'зеленый'
+            }
+
+            else if(div.style.background == 'green') {
+                div.style.background = 'coral'
+                div.style.color = 'black'
+                document.getElementById('color-name').innerHTML = 'коралловый'
+            }
+
+            else if(div.style.background == 'coral') {
+                div.style.background = 'black'
+                div.style.color = 'white'
+                document.getElementById('color-name').innerHTML = 'черный'
+            }
+
+            else {
+                div.style.background = 'lightblue'
+                div.style.color = 'black'
+                document.getElementById('color-name').innerHTML = 'светло-голубой'
+            }
+        }
+
+        </script>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+        </header>
+
+        <main>
+            <div class="color" ondblclick="ChangeColor(this)">
+                Цвет: <span id="color-name">розовый</span><br>
+                Сделайте двойной щелчок, чтобы сменить.
+            </div>
+        </main>
+
+        <footer>
+            &copy; Ефимова Юлия, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
