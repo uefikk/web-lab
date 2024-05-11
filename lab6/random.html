@@ -54,6 +54,18 @@
                 document.getElementById('result').innerHTML = '';
                 document.getElementById('user-number').value = '';
             }
+            function CheckRules() {
+                let screensRules = document.getElementsByClassName('rules');
+                screensRules[0].style.display = 'none';
+                screensRules[1].style.display = 'block';
+            }
+
+            function HideRules() {
+                let screensRules = document.getElementsByClassName ('rules');
+                screensRules[1].style.display = 'none';
+                screensRules[0].style.display = 'block';
+            }
+
             
         </script>
     </head>
@@ -69,6 +81,24 @@
                     Сыграть в игру
                 </button>
             </div>
+
+            <div class="rules">
+                <button id="openRules" onclick="CheckRules()">
+                    Показать правила игры
+                </button>
+            </div>
+            <div class="rules" style="display: none;">
+                <button onclick="HideRules()">Cкрыть правила игры</button>
+                <ol type="A">
+                    <li>Нажмите кнопку "Сыграть в игру"</li>
+                    <li>Введите в пустое поле число</li>
+                    <li>Если число отгадано неверно, то пробуйте снова и снова</li>
+                    <li>Если число отгадано верно, то поздравляем с победой!</li>
+                    <li>Вы можете посмотреть с како попытки угадали число и начать игру заново</li>
+                </ol>
+
+            </div>
+
             <div class="game" style="display: none;">
                 <h1>Угадай число!</h1>
                 <div>
