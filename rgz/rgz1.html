@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Навигационное меню</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .menu-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+.menu-toggle {
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 20px;
+  position: relative;
+}
+
+.menu-icon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: all 0.25s ease-in-out;
+}
+
+.menu-icon span:nth-child(1) {
+  top: 0px;
+}
+
+.menu-icon span:nth-child(2) {
+  top: 8px;
+}
+
+.menu-icon span:nth-child(3) {
+  top: 16px;
+}
+
+.menu-toggle.open .menu-icon span:nth-child(1) {
+  top: 8px;
+  transform: rotate(135deg);
+}
+
+.menu-toggle.open .menu-icon span:nth-child(2) {
+  opacity: 0;
+  left: -30px;
+}
+
+.menu-toggle.open .menu-icon span:nth-child(3) {
+  top: 8px;
+  transform: rotate(-135deg);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background-color: #f1f1f1;
+  transition: left 0.3s ease;
+  z-index: 998;
+}
+
+.menu.open {
+  left: 0;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+}
+
+  </style>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+  
+  menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('open');
+      menu.classList.toggle('open');
+  });
+
+</script>
+<body>
+  <div class="menu-container">
+    <div class="menu-toggle">
+      <div class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Услуги</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+  <main>
+    
+
+    
+  </main>
+</body>
+</html>
+
+
+
