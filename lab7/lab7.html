@@ -8,7 +8,7 @@
         <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
         <link rel="icon" href="../favicon-32x32.png">
         <script>
-             function addNewBlock(){
+        function addNewBlock(){
             let newBlock = document.createElement('div');
             newBlock.style.backgroundColor =  'pink';
             newBlock.style.border = '2px solid grey'
@@ -17,6 +17,33 @@
 
 
             document.querySelector('main').appendChild(newBlock);
+        }
+        function addNewBlocks() {
+        let main = document.querySelector('main');
+        let startingWidth = 200;
+        let widthIncrement = 40; 
+        let numberOfBlocks = parseInt(document.getElementById('blocksNumber').value);
+        let buttons = Array.from(main.querySelectorAll('button')); 
+        let blocks = Array.from(main.querySelectorAll('div:not(button)')); 
+
+        blocks.forEach(block => block.remove()); 
+        
+        for (let i = 0; i < numberOfBlocks; i++) {
+            let newBlock = document.createElement('div');
+            newBlock.style.backgroundColor = 'grey';
+            newBlock.style.height = '40px';
+            newBlock.style.border = '2px solid black';
+            newBlock.style.marginTop = '10px';
+            newBlock.style.borderRadius = '10px';
+            newBlock.innerHTML = `Блок № ${i + 1}: 2*${i}<sup>2</sup> = ${2 * i**2}`;
+            newBlock.style.textAlign = 'center';
+            newBlock.style.paddingTop = '19px';
+
+            let currentWidth = startingWidth + (widthIncrement * i);
+            newBlock.style.width = `${currentWidth}px`;
+
+            main.appendChild(newBlock);
+        }
         }
         </script>
     </head>
@@ -28,6 +55,8 @@
 
         <main>
             <button onclick="addNewBlock()">Добавить блок</button>
+            <button onclick="addNewBlocks()">Добавить блоки</button>
+        <input type="number" id="blocksNumber" placeholder="Введите кол-во блоков" style="width: 20%;">
             
         </main>
 
