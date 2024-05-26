@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal=1.0">
+        <title>Ефимова Юлия Алексеевна. Лабораторная 5"</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+    </head>
+    <style>
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #436a00;
+            color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #164c00;
+        }
+    </style>
+    <script>
+        function showExchange() {
+            const exchange = [
+                93.2918, 92.5058, 92.1314, 92.0134, 91.7791,
+                92.0538, 91.6918, 91.3124, 91.1231, 91.8239
+            ];
+            let detailElement = document.getElementById('detail');
+            detailElement.innerHTML = ''; 
+            let table = document.getElementById('dollar-table')
+            table.innerHTML = '';
+            for(i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerText = exchange[i].toFixed(2);
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+    
+            let sum = 0;
+            for(i = 0; i < exchange.length; i++){
+                sum += exchange[i];
+            }
+            let average = sum / exchange.length;
+            average = average.toFixed(2);
+            detailElement.innerHTML = `Средний курс доллара за 10 дней: <b>${average}</b>`;
+        }
+    </script>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 6
+        </header>
+
+        <main>
+            <button onclick="showExchange()">Курс доллара</button>
+            <table border="1" id="dollar-table"></table><br><br>
+            <div id="detail"></div>
+        </main>
+
+        <footer>
+            &copy; Ефимова Юлия, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
