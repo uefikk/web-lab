@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal=1.0">
+        <title>Ефимова Юлия Алексеевна. Лабораторная 5"</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+    </head>
+    <style>
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #d639bf;
+            color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #d44960;
+        }
+
+        .exchange-info {
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 20%;
+        }
+
+        th, td {
+            border: 1px solid #000000;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: rgb(98, 97, 175);
+        }
+    </style>
+
+<script>
+    function getEuroExchangeRate() {
+        const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+        fetch(url)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(json) {
+                const currentDate = new Date(json.Date).toLocaleDateString('ru-RU');
+                const currentRate = json.Valute.EUR.Value.toFixed(2);
+                const previousRate = json.Valute.EUR.Previous.toFixed(2);
+                const rateDifference = (currentRate - previousRate).toFixed(2);
+                const rateChangeMessage = (rateDifference > 0) ? 'Курс поднялся' : ((rateDifference < 0) ? 'Курс опустился' : '');
+
+                document.getElementById('currentDate').innerText = `Дата запроса: ${currentDate}`;
+                document.getElementById('currentRate').innerText = `${currentRate} руб.`;
+                document.getElementById('previousRate').innerText = `${previousRate} руб.`;
+                document.getElementById('rateDifference').innerText = `${Math.abs(rateDifference)} руб.`;
+                document.getElementById('rateChangeMessage').innerText = rateChangeMessage;
+
+                document.getElementById('exchangeInfo').style.display = 'block';
+            })
+            .catch(function(error) {
+                console.log('Error:', error);
+            });
+        }
+</script>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 7
+        </header>
+
+        <main>
+            <button class="button" onclick="getEuroExchangeRate()">Курс евро</button>
+            <div id="exchangeInfo" class="exchange-info" style="display: none;">
+                <table>
+                    <tr>
+                        <th>Параметр</th>
+                        <th>Значение</th>
+                    </tr>
+                    <tr>
+                        <td>Текущий курс евро</td>
+                        <td id="currentRate"></td>
+                    </tr>
+                    <tr>
+                        <td>Курс за предыдущую дату</td>
+                        <td id="previousRate"></td>
+                    </tr>
+                    <tr>
+                        <td>Разница</td>
+                        <td id="rateDifference"></td>
+                    </tr>
+                </table>
+                <p id="currentDate"></p>
+                <p id="rateChangeMessage"></p>
+                <p>Источник данных: <a href="https://www.cbr-xml-daily.ru/">www.cbr-xml-daily.ru</a></p>
+            </div>
+                
+        </main>
+
+        <footer>
+            &copy; Ефимова Юлия, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
