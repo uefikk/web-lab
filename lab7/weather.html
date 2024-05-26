@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal=1.0">
+        <title>Ефимова Юлия Алексеевна. Лабораторная 5"</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+    </head>
+    <style>
+    .button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #39d6cb;
+        color: white;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    .button:hover {
+        background-color: #41317e;
+    }
+    .exchange-info {
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+    }
+    table {
+        border-collapse: collapse;
+        width: 20%;
+    }
+    th, td {
+        border: 1px solid #000000;
+        text-align: left;
+        padding: 8px;
+    }
+    th {
+        background-color: #172ad1;
+    }
+</style>
+<script>
+    function getWeather() {
+        const url = "https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok";
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+
+                const timeArray = data.hourly.time;
+                const temperatureArray = data.hourly.temperature_2m;
+
+                const weatherElement = document.getElementById('weather');
+                weatherElement.innerHTML = '';
+
+                const targetHours = [8, 12, 20];
+                targetHours.forEach(hour => {
+                    const temperature = getTemperature(hour, timeArray, temperatureArray);
+                    const temperatureString = temperature !== null ? `${temperature} °C` : 'Нет данных';
+                    weatherElement.innerHTML += `<p>Температура в ${hour}:00: <b>${temperatureString}</b></p>`;
+                });
+            })
+            .catch(error => console.error('Ошибка получения прогноза погоды:', error));
+    }
+
+    function getTemperature(hour, timeArray, temperatureArray) {
+        for (let i = 0; i < timeArray.length; i++) {
+            const time = new Date(timeArray[i]);
+            if (time.getHours() === hour) {
+                return temperatureArray[i];
+            }
+        }
+        return null; 
+    }
+</script>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 6
+        </header>
+
+        <main>
+            <h1>Прогноз погоды для Новосибирска</h1>
+            <button class="button" onclick="getWeather()">Получить погоду</button>
+            <div id="weather"></div>
+        </main>
+
+        <footer>
+            &copy; Ефимова Юлия, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
