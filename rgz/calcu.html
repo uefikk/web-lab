@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal=1.0">
+        <title>Банк ВТБ(ПАО). Видео.</title>
+        <link rel="stylesheet" href="main1.css">
+        <link rel="shortcut icon" href="vtb.ico" type="image/x-icon">
+        <link rel="icon" href="vtb.ico">
+        <style>
+            .cituation{
+                border: 1px solid rgb(7, 5, 5);
+                padding: 25px;
+                border-radius: 30px;
+                margin: 33px;
+                box-shadow: 10px 10px 5px rgb(17, 8, 8);
+            }
+            .text {
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+            }
+            .container {
+                display: flex;
+                height: 100vh;
+            } 
+            .content {
+                max-width: 1080px;
+                margin: 0 auto;
+                padding: 190px; 
+            }
+            .cont {
+            max-width: 500px;
+            margin: 0 auto;
+            }
+            .container {
+            max-width: 500px;
+            margin: 0 auto;
+            }
+            h1 {
+            margin-bottom: 20px;
+            }
+            input, select {
+            padding: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            }
+            button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0c1195;
+            color: white;
+            border: none;
+            cursor: pointer;
+            }
+            #result {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            }
+            .footer {
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="bar"></div>
+        <div class="burger" onclick="toggleMenu()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        
+        <div class="menu" id="dropdownMenu">
+            <a href="video2.html">Видео</a>
+            <a href="news.html">Новости</a>
+            <a href="rgz2.html">О компании</a>
+            <a href="contakt.html">Контакты</a>
+            <a href="calculator.html">Калькурятор</a>
+        </div>
+        <div class="cont">
+            <div class="cont">
+                <h1>Курс валют</h1>
+                <label for="amount">Сумма:</label>
+                <input type="number" id="amount" value="1000" min="0" step="0.01">
+                <br>
+                <label for="from">Из:</label>
+                <select id="from">
+                  <option value="RUB">Российский рубль</option>
+                  <option value="QAR">Катарский риал</option>
+                </select>
+                <br>
+                <label for="to">В:</label>
+                <select id="to">
+                  <option value="RUB">Российский рубль</option>
+                  <option value="QAR">Катарский риал</option>
+                </select>
+                <br>
+                <button onclick="convertCurrency()">Конвертировать</button>
+                <div id="result"></div>
+            </div>
+        </header>
+    </body>
+    <footer style="color: rgb(252, 253, 255); background-color: rgb(16, 16, 123); padding: 10px;">
+        <p>&copy;ВТБ, 2024
+            Генеральная лицензия Банка России №1000
+            
+            191144, Санкт-Петербург,
+            Дегтярный переулок, д. 11, лит. А</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+        var menuIcon = document.querySelector('.burger');
+        var dropdown = document.getElementById('dropdownMenu');
+        menuIcon.classList.toggle('menu-open');
+        if (dropdown.style.display === "block") {
+            dropdown.style.display = "none";
+        } else {
+            dropdown.style.display = "block";
+        }
+        }
+        async function getCurrencyRates() {
+        const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
+        const data = await response.json();
+        return data.Valute;
+        }
+
+        async function convertCurrency() {
+        const amount = parseFloat(document.getElementById('amount').value);
+        const fromCurrency = document.getElementById('from').value;
+        const toCurrency = document.getElementById('to').value;
+
+        if (isNaN(amount) || amount <= 0) {
+            document.getElementById('result').textContent = 'Пожалуйста, введите положительное число.';
+            return;
+        }
+
+        const rates = await getCurrencyRates();
+        const fromRate = fromCurrency === 'RUB' ? 1 : rates['QAR'].Value;
+        const toRate = toCurrency === 'RUB' ? 1 : rates['QAR'].Value;
+        const convertedAmount = (amount / fromRate) * toRate;
+
+        document.getElementById('result').textContent = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
+        }
+    </script>
+</html>
