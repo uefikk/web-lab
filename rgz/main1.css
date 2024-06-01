@@ -1,0 +1,51 @@
+.burger {
+    cursor: pointer;
+    margin-top: 60px;
+    display: inline-block;
+    margin-bottom: 70px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.burger div {
+    width: 45px;
+    height: 10px;
+    background-color: #134cdd;
+    margin: 7px 0;
+    padding: auto;
+    transition: 0.4s;
+}
+.menu {
+display: none;
+position: relative;
+top: 10px;
+left: 10px;
+margin-top: -80px;
+margin-left: 40px;
+}
+.menu a {
+    color: rgb(33, 92, 210);
+    padding: 20px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.5cm;
+}
+.menu a:hover {
+    background-color: #f1f1f1;
+}
+.menu-open .bar1 {
+    transform: rotate(-45deg) translate(-20px, 6px);
+}
+.menu-open .bar2 {
+    opacity: 0;
+}
+.menu-open .bar3 {
+    transform: rotate(45deg) translate(-20px, -6px);
+}
+
+.bar {
+    position: absolute;
+    width: 35px;
+    height: 2.6px;
+    margin-top: -65px;
+    margin-left: -10px;
+}
