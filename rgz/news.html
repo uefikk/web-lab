@@ -3,97 +3,292 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scal=1.0">
-        <title>Ефимова Юлия Алексеевна. Лабораторная 4"</title>
-        <link rel="stylesheet" href="../main.css">
-        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-        <link rel="icon" href="../favicon-32x32.png">
+        <title>Банк ВТБ(ПАО). Новости.</title>
+        <link rel="stylesheet" href="main1.css">
+        <link rel="shortcut icon" href="vtb.ico" type="image/x-icon">
+        <link rel="icon" href="vtb.ico">
         <style>
-        .news{
-            display: inline-block;
-            margin: 15px;
-            background-color: white;
+        .news-card {
+            width: 100%;
+            padding: 10px;
+            height: 100%;
+            display: block;
+            margin-bottom: 60px;
+            border: 1px solid #ddd;
             border-radius: 5px;
-            padding: 5px 20px;
-            box-shadow: 0 0 15px rgb(127, 122, 122);
+            box-shadow: 0 2px 4px rgba(0, 1, 2, 0.1);
         }
-        .text{
-            text-align: right;
+        .news-card h2 {
+            margin-top: 0;
         }
-        .name{
+        .news-card p {
+            margin-bottom: 0;
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .news-card .show-more {
+            display: block;
+        }
+        .news-card.expanded .show-more {
+            display: none;
+        }
+        .news-card.expanded .full-text {
+            display: block;
+        }
+        .news-card .full-text {
+            display: none;
+        }
+
+        
+        .show-more{
+            font-family: 'montserrat', sans-serif;
+            background-color: #15178d; 
+            border: none; 
+            color: white; 
+            padding: 7px 15px; 
+            text-align: center; 
+            text-decoration: none; 
+            display: inline-block; 
+            font-size: 16px; 
+            margin: 4px 2px; 
+            cursor: pointer; 
+            transition-duration: 0.4s;
+        }
+        .show-more:hover{
+            background-color: #1b4ef6; 
+            color: white; 
+        }
+        .h1 {
             text-align: center;
+            color: #1b4ef6;
         }
-        </style>
-    </head>
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="bar"></div>
+            <div class="burger" onclick="toggleMenu()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            
+            <div class="menu" id="dropdownMenu">
+                <a href="video2.html">Видео</a>
+                <a href="news.html">Новости</a>
+                <a href="rgz2.html">О компании</a>
+                <a href="contakt.html">Контакты</a>
+                <a href="calculator.html">Калькурятор</a>
+            </div>
+            <h1>Новости</h1>
+    </header>
+    
+    </div>
 
-    <body>
-        <header>
-            НГТУ, ФБ, Лабораторная работа 4
-        </header>
+    
+        <div class="news-card">
+            <h2>ВТБ отменил комиссию за платежи организациям</h2>
+            <p>Дата новости: 29.05.2024</p>
+            <div class="short-text">
+                <p>ВТБ отменил комиссию в платежах по реквизитам, а также...</p>
+            </div>
+            <button class="show-more">Читать полностью</button>
+            <div class="full-text" style="display: none;">
+                <p>ВТБ отменил комиссию в платежах по реквизитам, а также по всем поставщикам, 
+                    которые заключили договор с банком. Теперь розничные клиенты могут бесплатно совершать 
+                    оплату по счетам или договорам за товары или услуги в адрес индивидуальных предпринимателей (ИП) 
+                    или организаций во всех каналах - онлайн сервисах, офисах или банкоматах.</p>
+            </div>
+        </div>
 
-        <main>
-            <div class="news">
-                <p class="name">Фен Dyson Supersonic™ HD07</p>
-                <img src="https://cdn1.ozone.ru/s3/multimedia-1-z/6909136919.jpg" alt="" width="300px">
-                <p class="text">Ceramic Pop</p>
+        <div class="news-card">
+            <h2>Группа ВТБ объявляет финансовые результаты по МСФО за первые четыре месяца 2024 года</h2>
+            <p>Дата новости: 29.05.2024</p>
+            <div class="short-text">
+                <p>Банк ВТБ, головная компания группы ВТБ («Группа»)...</p>
             </div>
+            <button class="show-more">Читать полностью</button>
+            <div class="full-text" style="display: none;">
+                <p>Банк ВТБ, головная компания группы ВТБ («Группа»), публикует неаудированные консолидированные финансовые результаты 
+                    в соответствии с МСФО за апрель и четыре месяца 2024 года.</p>
+            </div>
+        </div>
     
-            <div class="news">
-                <p class="name">Стайлер Dyson Airwrap™ HS05</p>
-                <img src="https://kstore.ru/upload/iblock/477/ijrizg3ra7m888mc3ax8o3lx5yiw3kwr.jpg" alt="" width="300px">
-                <p class="text">Медный</p>
-            </div>
-    
-            <div class="news">
-                <p class="name">Стайлер Dyson Airwrap™ HS05</p>
-                <img src="https://dr-store.ru/image/cache/catalog/demo-prostore/products/dyson/hs05/pic_tovar_dyson_hs05_35-1000x1000.jpg" alt="" width="300px">
-                <p class="text">Оранжевый топаз</p>
-            </div>
-    
-            <div class="news">
-                <p class="name">Выпрямитель Dyson Corrale™ </p>
-                <img src="https://cdn1.technopark.ru/289196513/technopark/photos_resized/product/1000_1000/554614/1_554614.jpg" alt="" width="300px">
-                <p class="text">Blue</p>
-            </div>
-    
-            <div class="news">
-                <p class="name">Dyson Purifier Humidify+Cool Formaldehyde™</p>
-                <img src="https://mobile-rooms.ru/d/20086853bb.jpg" alt="" width="300px">
-                <p class="text">Белый/золотой</p>
-            </div>
-    
-            <div class="news">
-                <p class="name">Dyson Cinetic Big Ball™ Absolute 2</p>
-                <img src="https://m.media-amazon.com/images/I/61ZXyy+k+nL.jpg" alt="" width="300px">
-                <p class="text">Starlight</p>
-            </div>
-    
-            <div class="news">
-                <p class="name">Фен Dyson Supersonic™ HD07</p>
-                <img src="https://main-cdn.sbermegamarket.ru/hlr-system/-20/273/420/259/112/52/600009225902b0.jpg" alt="" width="300px">
-                <p class="text">Color - Yellow</p>
-            </div>
-    
-            <div class="news">
-                <p class="name">Dyson Hot+Cool™ AM09</p>
-                <img src="https://static.cdek.shopping/images/shopping/11c18425b517410aa26598864305f8fe.jpg" alt="" width="300px">
-                <p class="text">Color - white</p>
-            </div>
-    
-            <div class="news">
-                <p class="name">Беспроводной пылесос Dyson Gen5detect™ Absolute</p>
-                <img src="https://i.ebayimg.com/images/g/GUUAAOSwUvBln9XC/s-l1600.png" alt="" width="300px">
-                <p class="text">Color - Purple</p>
-            </div>
 
-            <div class="news">
-                <p class="name">Беспроводной пылесос Dyson Gen5detect™ Absolute</p>
-                <img src="https://i.ebayimg.com/images/g/GUUAAOSwUvBln9XC/s-l1600.png" alt="" width="300px">
-                <p class="text">Color - Purple</p>
+    
+        <div class="news-card">
+            <h2>ВТБ запускает активную интеграцию розничных клиентов «Открытия»</h2>
+            <p>Дата новости: 29.05.2024</p>
+            <div class="short-text">
+                <p>ВТБ начинает основной этап...</p>
             </div>
-        </main>
+            <button class="show-more">Читать полностью</button>
+            <div class="full-text" style="display: none;">
+                <p>ВТБ начинает основной этап интеграции бизнеса двух банков. 
+                    Розничные клиенты «Открытия» до конца июня получат персональные уведомления с 
+                    предложением онлайн-перехода в ВТБ через интернет-банк и мобильное приложение.</p>
+            </div>
+        </div>
 
-        <footer>
-            &copy; Ефимова Юлия, ФБИ-22, 2 курс, 2024
-        </footer>
-    </body>
+        <div class="news-card">
+            <h2>Выставка-путешествие «В ожидании чуда. Посвящение Марку Шагалу» пройдет при поддержке ВТБ</h2>
+            <p>Дата новости: 28.05.2024</p>
+            <div class="short-text">
+                <p>Масштабный выставочный проект для...</p>
+            </div>
+            <button class="show-more">Читать полностью</button>
+            <div class="full-text" style="display: none;">
+                <p>Масштабный выставочный проект для всей семьи «В ожидании чуда. Посвящение Марку Шагалу» открылся при поддержке 
+                    ВТБ в Еврейском музее и центре толерантности. Выставка пройдет с 28 мая до 6 сентября 2024 года.</p>
+            </div>
+        </div>
+    
+
+
+
+    
+        <div class="news-card">
+            <h2>Нейроколобок ВТБ: новый платежный терминал с цифровым ассистентом</h2>
+            <p>Дата новости: 28.05.2024</p>
+            <div class="short-text">
+                <p>ВТБ показал инновационный платежный..</p>
+            </div>
+            <button class="show-more">Читать полностью</button>
+            <div class="full-text" style="display: none;">
+                <p>ВТБ показал инновационный платежный терминал NeuroKolobok с цифровым ассистентом. 
+                    Интерактивное устройство с мультимедийным экраном смогут использовать клиенты банка – 
+                    представители среднего и малого бизнеса – для обслуживания посетителей в магазинах и ресторанах, 
+                    кафе, отелях и других общественных местах.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <h2>ВТБ предоставил ГК ТОЧНО 3,9 млрд рублей на строительство жилого комплекса в Краснодаре</h2>
+            <p>Дата новости: 28.05.2024</p>
+            <div class="short-text">
+                <p>ВТБ открыл федеральному девелоперу..</p>
+            </div>
+            <button class="show-more">Читать полностью</button>
+            <div class="full-text" style="display: none;">
+                <p>ВТБ открыл федеральному девелоперу ТОЧНО кредитную линию в размере 3,9 млрд рублей до 2028 года. 
+                    Средства будут направлены на строительство второй очереди жилого комплекса «Родные Просторы» в краснодарском поселке Знаменский.</p>
+            </div>
+        </div>
+
+
+
+
+
+    
+        <div class="news-card">
+            <h2>XXXII Музыкальный фестиваль «Звезды белых ночей» пройдет при поддержке ВТБ</h2>
+            <p>Дата новости: 27.05.2024</p>
+            <div class="short-text">
+                <p>Самое масштабное и ожидаемое..</p>
+            </div>
+            <button class="show-more">Читать полностью</button>
+            <div class="full-text" style="display: none;">
+                <p>Самое масштабное и ожидаемое событие петербургского летнего театрального сезона — 
+                    фестиваль «Звезды белых ночей» — пройдет на всех площадках Мариинского театра при поддержке 
+                    ВТБ с 27 мая по 1 августа 2024 года. Художественный руководитель – Маэстро Валерий Гергиев.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <h2>ВТБ и мосметро реализовали оплату проезда виртуальной «Тройкой»</h2>
+            <p>Дата новости: 27.05.2024</p>
+            <div class="short-text">
+                <p> сегодняшнего дня всем пассажирам..</p>
+            </div>
+            <button class="show-more">Читать полностью</button>
+            <div class="full-text" style="display: none;">
+                <p>C сегодняшнего дня всем пассажирам московского транспорта доступна оплата проезда виртуальной «Тройкой». 
+                    Сервис реализован Московским метрополитеном совместно с банком ВТБ.</p>
+            </div>
+        </div>
+    
+
+
+
+
+    
+        <div class="news-card">
+            <h2>ВТБ развернул систему доступа на мероприятие по биометрии</h2>
+            <p>Дата новости: 27.05.2022</p>
+            <div class="short-text">
+                <p>Банк ВТБ развернул систему доступа и ..</p>
+            </div>
+            <button class="show-more">Читать полностью</button>
+            <div class="full-text" style="display: none;">
+                <p>Банк ВТБ развернул систему доступа и выдачу бейджей на мероприятие по биометрии. 
+                    Успешный опыт применения данной системы на выставке «Россия» позволил тиражировать 
+                    решение на конференции «Цифровая индустрия промышленной России» (ЦИПР), проходившей в Нижнем Новгороде 21-24 мая 2024 года.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <h2>«ВТБ Мои Инвестиции» признано лучшим приложением брокера</h2>
+            <p>Дата новости: 24.05.2024</p>
+            <div class="short-text">
+                <p>Брокер «ВТБ Мои Инвестиции» победил..</p>
+            </div>
+            <button class="show-more">Читать полностью</button>
+            <div class="full-text" style="display: none;">
+                <p>Брокер «ВТБ Мои Инвестиции» победил в номинации «Лучшее мобильное приложение брокерской компании
+                     – 2023» премии Investfunds Awards. Жюри отметило удобный функционал приложения, доступ к качественной аналитике, 
+                     интуитивно понятный интерфейс и разнообразие полезных сервисов, которые помогают инвестору зарабатывать.</p>
+            </div>
+        </div>
+    
+
+    <footer style="color: rgb(252, 253, 255); background-color: rgb(16, 16, 123); padding: 3px; ">
+        <p>&copy;ВТБ, 2024
+            Генеральная лицензия Банка России №1000
+            
+            191144, Санкт-Петербург,
+            Дегтярный переулок, д. 11, лит. А</p>
+    </footer>
+
+    <script>
+        var showMoreButtons = document.querySelectorAll('.show-more');
+        showMoreButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var card = this.parentNode;
+                var shortText = card.querySelector('.short-text');
+                var fullText = card.querySelector('.full-text');
+    
+                // Скрываем текст короткий и показываем полный текст
+                shortText.style.display = 'none';
+                fullText.style.display = 'block';
+    
+                // Изменяем текст на кнопке на "Скрыть"
+                this.textContent = 'Скрыть';
+    
+                // Добавляем обработчик события клика на кнопку "Скрыть"
+                this.onclick = function() {
+                    // Скрываем полный текст и показываем текст короткий
+                    fullText.style.display = 'none';
+                    shortText.style.display = 'block';
+    
+                    // Изменяем текст на кнопке на "Показать полностью"
+                    this.textContent = 'Показать полностью';
+    
+                    // Удаляем обработчик события клика на кнопку "Скрыть"
+                    this.onclick = null;
+                };
+            });
+        });
+        function toggleMenu() {
+        var menuIcon = document.querySelector('.burger');
+        var dropdown = document.getElementById('dropdownMenu');
+        menuIcon.classList.toggle('menu-open');
+        if (dropdown.style.display === "block") {
+            dropdown.style.display = "none";
+        } else {
+            dropdown.style.display = "block";
+        }
+        }
+    </script>
+</body>
 </html>
