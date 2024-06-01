@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal=1.0">
+        <title>Банк ВТБ(ПАО). Видео.</title>
+        <link rel="stylesheet" href="main1.css">
+        <link rel="shortcut icon" href="vtb.ico" type="image/x-icon">
+        <link rel="icon" href="vtb.ico">
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            }
+            .video-container {
+              text-align: center;
+            }
+            .video-wrapper {
+              position: relative;
+              padding-bottom: 56.25%;
+              height: 0;
+              overflow: hidden;
+            }
+            .video-wrapper iframe {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              margin-right: auto;
+              display: block
+            }
+            h1 {
+              color: rgb(5, 68, 124);
+              font-family: Arial;
+              font-size: 30px;
+            }
+            h2 {
+              color: rgb(5, 68, 124);
+              font-family: Arial;
+              font-size: 20px;
+            }
+        </style>
+    </head>
+        <body>
+          <header>
+            <div class="bar"></div>
+            <div class="burger" onclick="toggleMenu()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            
+            <div class="menu" id="dropdownMenu">
+                <a href="video2.html">Видео</a>
+                <a href="news.html">Новости</a>
+                <a href="rgz2.html">О компании</a>
+                <a href="contakt.html">Контакты</a>
+                <a href="calculator.html">Калькурятор</a>
+            </div>
+            <h1>Видео</h1>
+          </header>
+          <main>
+            <section class="video-container">
+              <h2>О нашей компании</h2>
+              <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/GGG42LLn22A" title="Реклама ВТБ Банк &quot; Егор Крид — Новый ВТБ Онлайн &quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <p style="color: rgb(5, 68, 124); font-size: 20px;">Это видео расскажет вам о нашей компании, ее истории, ценностях и достижениях.</p>
+            </section>
+          </main>
+        </body>
+        <footer style="color: rgb(252, 253, 255); background-color: rgb(16, 16, 123); padding: 3px; ">
+            <p>&copy;ВТБ, 2024
+                Генеральная лицензия Банка России №1000
+                
+                191144, Санкт-Петербург,
+                Дегтярный переулок, д. 11, лит. А</p>
+        </footer>
+        <script>
+          function toggleMenu() {
+          var menuIcon = document.querySelector('.burger');
+          var dropdown = document.getElementById('dropdownMenu');
+          menuIcon.classList.toggle('menu-open');
+          if (dropdown.style.display === "block") {
+              dropdown.style.display = "none";
+          } else {
+              dropdown.style.display = "block";
+          }
+          }
+          </script>
+</html>
+    
+
+
