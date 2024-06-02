@@ -22,12 +22,34 @@
             }
             #seconds {
                 position: absolute;
-                top: 50%;
-                left: 50%;
+                top: 25%;
+                left: 45%;
                 transform: translate(-50%, -50%);
                 font-size: 58px;
                 font-weight: bold;
-                color: #060400;
+                color: #ffffff;
+                z-index: 1;
+            }
+            .clock {
+                width: 300px;
+                height: 300px;
+                border: 10px solid rgb(255, 254, 254);
+                border-radius: 50%;
+                position: relative;
+                margin: 50px auto;
+                top: 50%;
+                background-color: black;
+            }
+            #second-hand {
+                width: 50%;
+                height: 6px;
+                background: rgb(72, 0, 255);
+                z-index: 2;
+                position: absolute;
+                top: 50%;
+                transform-origin: 100%;
+                transform: rotate(90deg);
+                transition: transform 0.5s ease-in-out;
             }
         </style>
     </head>
@@ -40,6 +62,9 @@
 
         <main>
             <div id="seconds"></div>
+            <div class="clock">
+                <div id="second-hand"></div>
+            </div>
         </main>
 
         <footer>
